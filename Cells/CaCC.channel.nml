@@ -36,10 +36,9 @@ Clh = 0.37 uM
 
 <ionChannel id="CaCC" type="ionChannelHH" conductance="10pS" species="Cl">
 
-    <gateHHtauInf id="m" instances="1">
+    <gateHHInstantaneous id="m" instances="1">
       <steadyState type="m_inf"/>
-      <timeCourse type="tau_m"/>
-    </gateHHtauInf>
+    </gateHHInstantaneous>
 
 
 </ionChannel>
@@ -50,7 +49,7 @@ Clh = 0.37 uM
       <Dynamics> 
 	      <DerivedVariable name="V" dimension="none" value="v /VOLT_SCALE"/>
 	      <DerivedVariable name="ca_conc" dimension="none" value="caConc / CONC_SCALE"/>
-	      <DerivedVariable name="r" exposure="r" dimension="none" value=" 1 / ( 1  +  exp((0.00037 - ca_conc)/0.09))"/>
+	      <DerivedVariable name="x" exposure="x" dimension="none" value=" 1 / ( 1  +  exp((0.00037 - ca_conc)/0.09))"/>
       </Dynamics>
 </ComponentType>   
     
