@@ -7,6 +7,7 @@
 
 
 <pulseGenerator id="iClamp0" delay="500 ms" duration="200 ms" amplitude="0.15 nA"/>
+
 <voltageClampTriple id="vClamp0" 
                         active = "1"
                         delay="50ms" duration="200ms"
@@ -29,8 +30,8 @@
         	<input id="0" target="../pop/0/C51A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
     	 </inputList>
 
-	<inputList id="VClamps" component="vClamp0" population="pop">
+	 <inputList id="VClamps" component="vClamp0" population="pop">
 		<input id="0" target="../pop/0/C51A" segmentId="0" destination="synapses"/> <!-- Vclamp into iseg -->
-	</inputList>
+	 </inputList>
 </network>
 </neuroml>    
