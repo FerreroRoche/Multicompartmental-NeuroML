@@ -1,3 +1,3 @@
-Subset of Matthijs' simplified morphologies
+Morphologies taken from https://github.com/MRIO/IONML
 
-Taken from Working_cells
+Edited to reflect new channels

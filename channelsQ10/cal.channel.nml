@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta2.xsd" id="cal">
 
   <!-- 
@@ -38,11 +38,13 @@
   <ionChannel id="cal" type="ionChannelHH" conductance="10pS" species="ca">
 
     <gateHHtauInf id="k" instances="3">
+	  <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-61mV" scale="4.2mV"/>
       <timeCourse type="fixedTimeCourse" tau="1 ms"/>
     </gateHHtauInf>
 
     <gateHHtauInf id="l" instances="1">
+	  <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-85.5mV" scale="-8.5mV"/>
       <timeCourse type="CaL_tau" tau="3ms" midpoint="-40mV" scale="-33mV"/>
     </gateHHtauInf>

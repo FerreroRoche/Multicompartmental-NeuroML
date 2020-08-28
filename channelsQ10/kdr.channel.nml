@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta2.xsd" id="kdr">
 
   <!-- 
@@ -35,8 +35,10 @@
   </annotation>
 
   <ionChannel id="kdr" type="ionChannelHH" conductance="10pS" species="k">
+  <q10ConductanceScaling q10Factor="2.3" experimentalTemp="23degC"/>
 
     <gateHHtauInf id="n" instances="4">
+	  <q10Settings type="Q10ExpTemp" q10Factor="2.3" experimentalTemp="23degC"/>    
       <timeCourse type="Kdr_tau"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-3mV" scale="10mV"/>
     </gateHHtauInf>
