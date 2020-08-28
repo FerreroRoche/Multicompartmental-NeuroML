@@ -45,13 +45,12 @@ Clh = 0.37 uM
 </ionChannel>
 
 <ComponentType name="m_inf" extends = "baseVoltageConcDepVariable">
-      <Constant name="TIME_SCALE" dimension="time" value="1 ms"/>
       <Constant name="VOLT_SCALE" dimension="voltage" value="1 mV"/>
       <Constant name="CONC_SCALE" dimension="concentration" value="1 mol_per_cm3"/>
       <Dynamics> 
 	      <DerivedVariable name="V" dimension="none" value="v /VOLT_SCALE"/>
 	      <DerivedVariable name="ca_conc" dimension="none" value="caConc / CONC_SCALE"/>
-	      <DerivedVariable name="r" exposure="r" dimension="per_time" value=" 1 / ( 1  +  exp((0.00037 - ca_conc)/0.09)) / TIME_SCALE"/>
+	      <DerivedVariable name="r" exposure="r" dimension="none" value=" 1 / ( 1  +  exp((0.00037 - ca_conc)/0.09))"/>
       </Dynamics>
 </ComponentType>   
     
