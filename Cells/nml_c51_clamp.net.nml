@@ -9,7 +9,7 @@
 <pulseGenerator id="iClamp0" delay="500 ms" duration="200 ms" amplitude="0.15 nA"/>
 
 <voltageClampTriple id="vClamp0" 
-                        active = "1"
+                        active = "0"
                         delay="50ms" duration="200ms"
                         conditioningVoltage="-55mV" 
                         testingVoltage="-55mV" 
