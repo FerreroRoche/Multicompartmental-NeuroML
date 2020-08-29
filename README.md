@@ -1,5 +1,5 @@
 # Multicompartmental-NeuroML
-NeuroML branch of the multicompartmental IO model
+NeuroML branch of the multicompartmental IO model found on: https://github.com/MRIO/IONML & http://www.opensourcebrain.org/projects/io1 
 
 
  ## Channel Information
