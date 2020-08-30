@@ -13,7 +13,7 @@
 
   -->
 
-
+    
 
 
   
@@ -40,6 +40,7 @@
     </rdf:RDF>
   </annotation>
 -->
+ 
 
   <ionChannel id="cacc" type="ionChannelHH" conductance="10pS" species="cl">
 
