@@ -12,7 +12,7 @@
     <include href="../channels/kca.channel.nml"/>
     <include href="../channels/h.channel.nml"/>
     <include href="../channels/ca.nml"/>
-    <include href="../channels/CaCC.channel.nml"/>
+    <include href="../channels/cacc.channel.nml"/>
 
     <!-- axon -->
     <include href="../channels/na_a.channel.nml"/>
@@ -89,6 +89,7 @@ inode R X Y Z D/2 idpar</notes>
 
             <segment id="5" name="Comp_7">
                 <parent segment="0"/>
+                <proximal x="67.2353" y="79.02444" z="44.4483" diameter="12.32"/>
                 <distal x="67.07225" y="72.79159" z="48.65997" diameter="7.645"/>
             </segment>
 
@@ -1370,8 +1371,6 @@ inode R X Y Z D/2 idpar</notes>
             
                 <member segment="1"/>
             
-                <member segment="5"/>
-            
                 <member segment="6"/>
             
                 <member segment="9"/>
@@ -1403,6 +1402,14 @@ inode R X Y Z D/2 idpar</notes>
                 These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
 
                 <member segment="4"/>
+            </segmentGroup>
+
+            <segmentGroup id="ExtraSomaSec_Comp_7" neuroLexId="sao864921383">    <!--
+                This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                neuroLexId = sao864921383 form a non-overlapping set of all of the segments. 
+                These segmentGroups correspond to the 'cables' of NeuroML v1.8.1. -->
+
+                <member segment="5"/>
             </segmentGroup>
 
             <segmentGroup id="Sec_Comp_11" neuroLexId="sao864921383">    <!--
@@ -1988,6 +1995,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
+                <include segmentGroup="ExtraSomaSec_Comp_7"/>
                 <include segmentGroup="Sec_Comp_11"/>
                 <include segmentGroup="Sec_Comp_12"/>
                 <include segmentGroup="Sec_Comp_14"/>
@@ -2009,6 +2017,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
+                <include segmentGroup="ExtraSomaSec_Comp_7"/>
             </segmentGroup>
 
             <segmentGroup id="soma_group" neuroLexId="GO:0043025">    <!--Soma group-->
@@ -2021,12 +2030,14 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
+                <include segmentGroup="ExtraSomaSec_Comp_7"/>
             </segmentGroup>
 
             <segmentGroup id="ExtraSomaSegments">
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
                 <include segmentGroup="ExtraSomaSec_Comp_6"/>
+                <include segmentGroup="ExtraSomaSec_Comp_7"/>
             </segmentGroup>
 
             <segmentGroup id="Colour_DarkGrey">
@@ -2085,7 +2096,7 @@ inode R X Y Z D/2 idpar</notes>
                 <channelDensity condDensity="10 mS_per_cm2" id="cah_dend" segmentGroup="dendrite_group" ionChannel="cah" ion="ca" erev="120 mV"/>
                 <channelDensity condDensity="35 mS_per_cm2" id="kca_dend" segmentGroup="dendrite_group" ionChannel="kca" ion="k" erev="-75 mV"/>
                 <channelDensity condDensity="25 mS_per_cm2" id="h_dend" segmentGroup="dendrite_group" ionChannel="h" ion="k" erev="-43 mV"/>
-                <channelDensity condDensity="25 mS_per_cm2" id="CaCC_dend" segmentGroup="dendrite_group" ionChannel="CaCC" ion="cl" erev="-45 mV"/>
+                <channelDensity condDensity="35 mS_per_cm2" id="cacc_dend" segmentGroup="dendrite_group" ionChannel="cacc" ion="cl" erev="-45 mV"/>
 
                 <!-- axon -->
                 <channelDensity condDensity="200 mS_per_cm2" id="na_axon" segmentGroup="axon_group" ionChannel="na_a" ion="na" erev="55 mV"/>
