@@ -6,7 +6,9 @@
 
 
 
-<pulseGenerator id="iClamp0" delay="500 ms" duration="200 ms" amplitude="0.15 nA"/>
+<pulseGenerator id="iClamp0" delay="50 ms" duration="50 ms" amplitude="0.15 nA"/>
+<pulseGenerator id="iClamp1" delay="150 ms" duration="50 ms" amplitude="0.15 nA"/>
+<pulseGenerator id="iClamp2" delay="250 ms" duration="50 ms" amplitude="0.15 nA"/>
 
 <voltageClampTriple id="vClamp0" 
                         active = "0"
@@ -27,6 +29,14 @@
 	</population>
 
 	 <inputList id="Clamps" component="iClamp0" population="pop">
+        	<input id="0" target="../pop/0/C51A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+    	 </inputList>
+	
+	 <inputList id="Clamps1" component="iClamp1" population="pop">
+        	<input id="0" target="../pop/0/C51A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
+    	 </inputList>
+	 
+	 <inputList id="Clamps2" component="iClamp2" population="pop">
         	<input id="0" target="../pop/0/C51A" segmentId="0" destination="synapses"/> <!-- iclamp into iseg -->
     	 </inputList>
 
