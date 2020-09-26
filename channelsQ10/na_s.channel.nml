@@ -42,7 +42,7 @@
     </gate>
 
     <gate type="gateHHtauInf" id="h" instances="1">
-      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0degC"/>
+      <!--<q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>-->
       <timeCourse type="ExpTime" tau="3ms" midpoint="-40mV" scale="-33mV"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-70mV" scale="-5.8mV"/>
     </gate>
