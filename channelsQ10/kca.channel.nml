@@ -7,7 +7,7 @@
 
                 
         <gate id="z" type="gateHHrates" instances="1">
-            <!--<q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>-->
+            <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
             <forwardRate type="kca_alpha"/>
             <reverseRate type="kca_beta"/>
             
