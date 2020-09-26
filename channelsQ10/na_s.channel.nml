@@ -38,6 +38,7 @@
   </annotation>
 
     <gate type="gateHHInstantaneous" id="m" instances="3">
+      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-30mV" scale="5.5mV"/>
     </gate>
 
