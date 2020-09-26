@@ -10,12 +10,7 @@
     h_inf = 1 / (1 + (exp((-70 - V_soma)/-5.8)))
     tau_h =       3 * exp((-40 - V_soma)/33)
   -->
-  <include href="ExpTime.nml"/>
-
-
-  <ionChannel id="na_s" type="ionChannelHH" conductance="10pS" species="na">
-
-      <annotation>
+ <annotation>
     <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description rdf:about="na_s">
 
@@ -36,7 +31,14 @@
       </rdf:Description>
     </rdf:RDF>
   </annotation>
+  
+  <include href="ExpTime.nml"/>
 
+
+  <ionChannel id="na_s" type="ionChannelHH" conductance="10pS" species="na">
+  
+    <q10ConductanceScaling q10Factor="3" experimentalTemp="20.0 degC"/>
+  
     <gate type="gateHHInstantaneous" id="m" instances="3">
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-30mV" scale="5.5mV"/>
     </gate>

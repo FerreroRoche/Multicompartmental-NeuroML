@@ -27,7 +27,7 @@
   </annotation>
 
   <ionChannel id="h" type="ionChannelHH" conductance="10pS" species="h">
-
+    <q10ConductanceScaling q10Factor="3" experimentalTemp="20.0 degC"/>
     <gateHHtauInf id="n" instances="1">
       <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" scale="-4mV" midpoint="-80mV"/>

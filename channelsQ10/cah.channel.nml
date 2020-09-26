@@ -29,7 +29,8 @@
   </annotation>
 
   <ionChannel id="cah" type="ionChannelHH" conductance="10pS" species="ca">
-
+    <q10ConductanceScaling q10Factor="3" experimentalTemp="20.0 degC"/>
+    
     <gateHHrates id="r" instances="2">
       <q10Settings type="q10Fixed" fixedQ10="0.2"/><!-- hack to get 5*tau -->
       <forwardRate type="HHSigmoidRate" rate="1.7per_ms" midpoint="5mV" scale="13.9mV"/>

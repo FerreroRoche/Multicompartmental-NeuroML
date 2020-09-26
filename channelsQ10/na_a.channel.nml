@@ -40,7 +40,7 @@
 -->
 
   <ionChannel id="na_a" type="ionChannelHH" conductance="10pS" species="na">
-
+    <q10ConductanceScaling q10Factor="3" experimentalTemp="20.0 degC"/>
     <gate type="gateHHInstantaneous" id="m" instances="3">
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-30mV" scale="5.5mV"/>
     </gate>
