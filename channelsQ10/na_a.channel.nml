@@ -42,11 +42,12 @@
   <ionChannel id="na_a" type="ionChannelHH" conductance="10pS" species="na">
 
     <gate type="gateHHInstantaneous" id="m" instances="3">
+      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-30mV" scale="5.5mV"/>
     </gate>
 
     <gate type="gateHHtauInf" id="h" instances="1">
-      <!--<q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>-->
+      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <timeCourse type="ExpTime" tau="1.5ms" midpoint="-40mV" scale="-33mV"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-60mV" scale="-5.8mV"/>
       
