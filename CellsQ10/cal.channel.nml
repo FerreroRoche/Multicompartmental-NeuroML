@@ -38,13 +38,13 @@
   <ionChannel id="cal" type="ionChannelHH" conductance="10pS" species="ca">
 
     <gateHHtauInf id="k" instances="3">
-	  <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
+      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-61mV" scale="4.2mV"/>
       <timeCourse type="fixedTimeCourse" tau="1 ms"/>
     </gateHHtauInf>
 
     <gateHHtauInf id="l" instances="1">
-	  <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
+      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="20.0 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" midpoint="-85.5mV" scale="-8.5mV"/>
       <timeCourse type="CaL_tau" tau="3ms" midpoint="-40mV" scale="-33mV"/>
     </gateHHtauInf>

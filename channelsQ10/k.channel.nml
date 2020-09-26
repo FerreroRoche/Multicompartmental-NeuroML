@@ -34,7 +34,7 @@
   </annotation>
   
   
-	  <q10ConductanceScaling q10Factor="2.3" experimentalTemp="23degC"/>
+	  
 	  <gate id="n" type="gateHHrates" instances="4">
 		  <q10Settings type="q10ExpTemp" q10Factor="2.3" experimentalTemp="23degC"/>
 		  <forwardRate type="HHExpLinearRate" rate="1.3 per_ms" scale="10mV" midpoint="-25mV"/>

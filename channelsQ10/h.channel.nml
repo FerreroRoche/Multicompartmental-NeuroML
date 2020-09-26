@@ -29,7 +29,7 @@
   <ionChannel id="h" type="ionChannelHH" conductance="10pS" species="h">
 
     <gateHHtauInf id="n" instances="1">
-	  <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="33 degC"/>
+      <q10Settings type="q10ExpTemp" q10Factor="3" experimentalTemp="33 degC"/>
       <steadyState type="HHSigmoidVariable" rate="1" scale="-4mV" midpoint="-80mV"/>
       <timeCourse type="Tau_Ih"/>
     </gateHHtauInf>
