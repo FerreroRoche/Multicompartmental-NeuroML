@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# This file can be used to run the jNeuroML jar on Linux and Mac. Either run:
+#
+#     ./jnml
+#
+# from within this directory, or add the path to this directory to your PATH 
+# environment variable and create the variable JNML_HOME, pointing to this 
+# directory, so that you can run: 
+# 
+#     jnml 
+#
+# from any directory
+
+
+# Set the current version of jNeuroML
+VERSION=0.8.5
+
+
+#   Use an altered value below to run the application with extra memory
+#   **OR** set JNML_MAX_MEMORY_LOCAL in your .bashrc file
+#   Type java -X for more info
+export JNML_MAX_MEMORY=400M
+
+if [ -n "$JNML_MAX_MEMORY_LOCAL" ]; then
+    export JNML_MAX_MEMORY=$JNML_MAX_MEMORY_LOCAL
+fi
+
+
+# Create the Java classpath
+export CLASSPATH=jNeuroML-$VERSION-jar-with-dependencies.jar:$JNML_HOME/jNeuroML-$VERSION-jar-with-dependencies.jar
+
+
+# Run this file with the java executable, passing on arguments given to jnml
+java -Xmx$JNML_MAX_MEMORY -classpath $CLASSPATH org.neuroml.JNeuroML ${1+"$@"}
