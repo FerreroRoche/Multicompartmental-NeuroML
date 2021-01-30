@@ -2,13 +2,13 @@
 NeuroML branch of the multicompartmental IO model found on: https://github.com/MRIO/IONML & http://www.opensourcebrain.org/projects/io1 
 
 
-##Network information
+## Network information
 
 Networks are the constructed cell experiments that are able to run in OSB\
 
 Networks contains all cells without Q10 parameters\
 Q10of3_Networks contains all cells with Q10 factors set to 3\
-variableQ10s_Networks contains all cells with Q10 factors in accordance with [Naomis exploration][https://github.com/njhulst/IO-temperature-dependence\]
+variableQ10s_Networks contains all cells with Q10 factors in accordance with [Naomis exploration](https://github.com/njhulst/IO-temperature-dependence\)
 
 
 
