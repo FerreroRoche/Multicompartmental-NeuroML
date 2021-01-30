@@ -2,23 +2,23 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="C25C_scaled_exp_resample_5">
 
     <!-- soma -->
-    <include href="../channels/na_s.channel.nml"/>
-    <include href="../channels/kdr.channel.nml"/>
-    <include href="../channels/k.channel.nml"/>
-    <include href="../channels/cal.channel.nml"/>
+    <include href="../channels_Q10of3/na_s.channel.nml"/>
+    <include href="../channels_Q10of3/kdr.channel.nml"/>
+    <include href="../channels_Q10of3/k.channel.nml"/>
+    <include href="../channels_Q10of3/cal.channel.nml"/>
 
     <!-- dend -->
-    <include href="../channels/cah.channel.nml"/>
-    <include href="../channels/kca.channel.nml"/>
-    <include href="../channels/h.channel.nml"/>
-    <include href="../channels/ca.nml"/>
-    <include href="../channels/cacc.channel.nml"/>
+    <include href="../channels_Q10of3/cah.channel.nml"/>
+    <include href="../channels_Q10of3/kca.channel.nml"/>
+    <include href="../channels_Q10of3/h.channel.nml"/>
+    <include href="../channels_Q10of3/ca.nml"/>
+    <include href="../channels_Q10of3/cacc.channel.nml"/>
 
     <!-- axon -->
-    <include href="../channels/na_a.channel.nml"/>
+    <include href="../channels_Q10of3/na_a.channel.nml"/>
 
     <!-- all  -->
-    <include href="../channels/leak.channel.nml"/>
+    <include href="../channels_Q10of3/leak.channel.nml"/>
 
     <!--
     % Cell morphology
