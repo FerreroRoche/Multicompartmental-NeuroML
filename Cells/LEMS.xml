@@ -17,7 +17,7 @@
 
 
     <!-- Including file with a <neuroml> root, a "real" NeuroML 2 file -->
-    <Include file="nml_c51_clamp.net.nml"/>
+    <Include file="nml_C51A_clamp.net.nml"/>
 
 
     <Simulation id="sim1" length="300ms" step="0.01ms" target="net">
