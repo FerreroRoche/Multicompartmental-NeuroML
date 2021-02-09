@@ -2446,7 +2446,7 @@ inode R X Y Z D/2 idpar</notes>
                 <channelDensity condDensity="200 mS_per_cm2" id="na_axon" segmentGroup="axon_group" ionChannel="na_a" ion="na" erev="55 mV"/>
                 <channelDensity condDensity="200 mS_per_cm2" id="k_axon" segmentGroup="axon_group" ionChannel="k" ion="k" erev="-75 mV"/>
 
-                <channelDensity condDensity="1.3e-2 mS_per_cm2" id="leak_all" segmentGroup="all" ionChannel="leak" ion="leak" erev="10 mV"/>
+                <channelDensity condDensity="1.3e-2 mS_per_cm2" id="leak_all" segmentGroup="all" ionChannel="leak" ion="non_specific" erev="10 mV"/>
                 
                 <spikeThresh value="0 mV"/>
                 <specificCapacitance value="1 uF_per_cm2"/>
