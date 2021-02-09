@@ -3597,19 +3597,19 @@ inode R X Y Z D/2 idpar</notes>
                 <channelDensity condDensity="15 mS_per_cm2" id="k_soma" segmentGroup="soma_group"
                 ionChannel="k" ion="k" erev="-75 mV"/>
                 <channelDensity condDensity="20 mS_per_cm2" id="cal_soma" segmentGroup="soma_group"
-                ionChannel="cal" ion="cal" erev="120 mV"/>
+                ionChannel="cal" ion="ca" erev="120 mV"/>
 
                 <!-- dendrite 10 35 25--> 
                 <channelDensity condDensity="10 mS_per_cm2" id="cah_dend" segmentGroup="dendrite_group" ionChannel="cah" ion="ca" erev="120 mV"/>
                 <channelDensity condDensity="35 mS_per_cm2" id="kca_dend" segmentGroup="dendrite_group" ionChannel="kca" ion="k" erev="-75 mV"/>
-                <channelDensity condDensity="25 mS_per_cm2" id="h_dend" segmentGroup="dendrite_group" ionChannel="h" ion="k" erev="-43 mV"/>
+                <channelDensity condDensity="25 mS_per_cm2" id="h_dend" segmentGroup="dendrite_group" ionChannel="h" ion="h" erev="-43 mV"/>
                 <channelDensity condDensity="0.7 mS_per_cm2" id="cacc_dend" segmentGroup="dendrite_group" ionChannel="cacc" ion="cl" erev="-45 mV"/>
 
                 <!-- axon -->
                 <channelDensity condDensity="200 mS_per_cm2" id="na_axon" segmentGroup="axon_group" ionChannel="na_a" ion="na" erev="55 mV"/>
                 <channelDensity condDensity="200 mS_per_cm2" id="k_axon" segmentGroup="axon_group" ionChannel="k" ion="k" erev="-75 mV"/>
 
-                <channelDensity condDensity="1.3e-2 mS_per_cm2" id="leak_all" segmentGroup="all" ionChannel="leak" ion="_leak" erev="10 mV"/>
+                <channelDensity condDensity="1.3e-2 mS_per_cm2" id="leak_all" segmentGroup="all" ionChannel="leak" ion="leak" erev="10 mV"/>
                 
                 <spikeThresh value="0 mV"/>
                 <specificCapacitance value="1 uF_per_cm2"/>
