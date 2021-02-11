@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Ca_conc">
+
+  <!--
+
+	gamma = percent of unbuffered calcium  (currently not used)
+	decayConstant = 6.86ms :  rate of calcium removal
+	d = 0.196 um : depth of a submembrane shell, used to calculate d_eq which defines the equivalent volume for effective Ca2+ concentration
+	rest_Ca = 45 (nM)
+	diam = 5 um: diameter of each compartment. currently set to be the same diameter for each compartment.
+
+  -->
+
+	<concentrationModel id="Ca_conc" type="newConcentrationModel" rest_Ca ="45 nM" decayConstant="6.86 ms" d="0.1 um" gamma="1" diam="5 um" ion="ca" /> 
+
+
+	<ComponentType name="newConcentrationModel" extends="concentrationModel">
+
+        	<Parameter name="gamma" dimension="none"/>
+        	<Parameter name="rest_Ca" dimension="concentration"/>
+        	<Parameter name="decayConstant" dimension="time"/>
+        	<Parameter name="d" dimension="length"/>
+		<Parameter name="diam" dimension="length"/>
+
+        
+		<Constant name="Faraday" dimension="charge_per_mole" value="96485.3C_per_mol"/>
+
+        	<Requirement name="iCa" dimension="current"/>
+
+        	<Text name="species"/> 
+
+        	<Dynamics>
+
+            		<StateVariable name="concentration" exposure="concentration" dimension="concentration"/>
+            		<StateVariable name="extConcentration" exposure="extConcentration" dimension="concentration"/>
+
+            		<DerivedVariable name="currDensCa" dimension="currentDensity" value="iCa / surfaceArea"/>
+            		<DerivedVariable name="d_eq" dimension="length" value="d - ((d*d)/diam)"/>
+            		<TimeDerivative variable="concentration" value="(currDensCa*gamma/(2 * Faraday * d_eq)) - ((concentration - rest_Ca) / decayConstant)"/>            
+
+            		<OnStart>
+                	<StateAssignment variable="concentration" value="initialConcentration"/>
+                	<StateAssignment variable="extConcentration" value="initialExtConcentration"/>
+            		</OnStart>
+
+        	</Dynamics>
+
+	</ComponentType>
+
+</neuroml>
