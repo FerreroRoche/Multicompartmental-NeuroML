@@ -1,0 +1,44 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.5.5 (libNeuroML v0.2.52)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="Test" reportFile="SimStat.txt"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="./pynmlNetworks/nml_C51A.net.nml"/>
+    <Include file="../Cells/C51A_scaled_exp_resample_5.cell.nml"/>
+    <Include file="../channels/na_s.channel.nml"/>
+    <Include file="ExpTime.nml"/>
+    <Include file="../channels/kdr.channel.nml"/>
+    <Include file="../channels/k.channel.nml"/>
+    <Include file="../channels/cal.channel.nml"/>
+    <Include file="../channels/cah.channel.nml"/>
+    <Include file="../channels/kca.channel.nml"/>
+    <Include file="../channels/h.channel.nml"/>
+    <Include file="../channels/ca.nml"/>
+    <Include file="../channels/cacc.channel.nml"/>
+    <Include file="../channels/na_a.channel.nml"/>
+    <Include file="../channels/leak.channel.nml"/>
+   
+    <Simulation id="Test" length="300ms" step="2.5e-05ms" target="network_of_C51A" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="display_0" title="IDK FIRST DISPLAY TEST" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-100" ymax="70">
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/v" scale="1" color="#d54f33" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="voltage traces" fileName="Test.v.dat">
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

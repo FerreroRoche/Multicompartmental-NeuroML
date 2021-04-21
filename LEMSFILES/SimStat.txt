@@ -1,0 +1,10 @@
+# Report of running simulation with NEURON -- VERSION 7.7.2 7.7 (2b7985ba) 2019-06-20
+Simulator=NEURON
+SimulatorVersion=NEURON -- VERSION 7.7.2 7.7 (2b7985ba) 2019-06-20
+SimulationFile=/home/jovyan/work/NeuroML_Examples/Rocher/LEMSFILES/LEMS_Test_C51A_nrn.py
+PythonVersion=3.7.6 | packaged by conda-forge | (default, Jun  1 2020, 18:57:50)  [GCC 7.5.0]
+NeuroMLExportVersion=1.7.0
+StartTime=2021-04-15 08:55:39
+SetupTime=0.02823638916015625
+RealSimulationTime=4.649765491485596
+SimulationSaveTime=4.942113637924194

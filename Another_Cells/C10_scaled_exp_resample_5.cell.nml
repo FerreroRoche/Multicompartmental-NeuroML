@@ -5173,13 +5173,13 @@ inode R X Y Z D/2 idpar</notes>
                 ionChannel="kdr" ion="k" erev="-75 mV"/>
                 <channelDensity condDensity="15 mS_per_cm2" id="k_soma" segmentGroup="soma_group"
                 ionChannel="k" ion="k" erev="-75 mV"/>
-                <channelDensity condDensity="20 mS_per_cm2" id="cal_soma" segmentGroup="soma_group"
+                <channelDensity condDensity="50 mS_per_cm2" id="cal_soma" segmentGroup="soma_group"
                 ionChannel="cal" ion="ca" erev="120 mV"/>
-		<channelDensity condDensity="20 mS_per_cm2" id="BK_soma" segmentGroup="soma_group"
+                <channelDensity condDensity="20 mS_per_cm2" id="BK_soma" segmentGroup="soma_group"
                 ionChannel="BK" ion="k" erev="-88 mV"/>
 
                 <!-- dendrite 10 35 25
-                <channelDensity condDensity="10 mS_per_cm2" id="cah_dend" segmentGroup="dendrite_group" ionChannel="cah" ion="ca" erev="120 mV"/>
+                <channelDensity condDensity="50 mS_per_cm2" id="cah_dend" segmentGroup="dendrite_group" ionChannel="cah" ion="ca" erev="120 mV"/>
                 <channelDensity condDensity="35 mS_per_cm2" id="kca_dend" segmentGroup="dendrite_group" ionChannel="kca" ion="k" erev="-75 mV"/>
                 <channelDensity condDensity="25 mS_per_cm2" id="h_dend" segmentGroup="dendrite_group" ionChannel="h" ion="h" erev="-43 mV"/>
                 <channelDensity condDensity="0.7 mS_per_cm2" id="cacc_dend" segmentGroup="dendrite_group" ionChannel="cacc" ion="cl" erev="-45 mV"/>
@@ -5202,9 +5202,9 @@ inode R X Y Z D/2 idpar</notes>
             <intracellularProperties>
                <!-- <species segmentGroup="dendrite_group" id="ca" ion="ca" concentrationModel="ca_conc" initialConcentration="3.7152 mM" initialExtConcentration="3.0mM"/> -->
 
-                <resistivity value=".1 ohm_cm" segmentGroup="soma_group"/>
-             <!--   <resistivity value=".1 ohm_cm" segmentGroup="dendrite_group"/> -->
-                <resistivity value=".1 ohm_cm" segmentGroup="axon_group"/>
+                <resistivity value="100 ohm_cm" segmentGroup="soma_group"/>
+             <!--   <resistivity value="100 ohm_cm" segmentGroup="dendrite_group"/> -->
+                <resistivity value="100 ohm_cm" segmentGroup="axon_group"/>
             </intracellularProperties>
 
         </biophysicalProperties>

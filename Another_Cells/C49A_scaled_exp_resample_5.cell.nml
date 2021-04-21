@@ -3531,7 +3531,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="Soma"/>
             </segmentGroup>
 
-            <segmentGroup id="dendrite_group" neuroLexId="GO:0030425">    <!--Dendrite group-->
+            <segmentGroup id="axon_group" neuroLexId="GO:0030425">    <!--Dendrite group-->
 
                 <include segmentGroup="ExtraSomaSec_Comp_4"/>
                 <include segmentGroup="ExtraSomaSec_Comp_5"/>
@@ -3544,7 +3544,7 @@ inode R X Y Z D/2 idpar</notes>
                 <include segmentGroup="ExtraSomaSec_Comp_9"/>
             </segmentGroup>
 
-            <segmentGroup id="axon_group" neuroLexId="GO:0030424">    <!--Axon group-->
+            <segmentGroup id="dendrite_group" neuroLexId="GO:0030424">    <!--Axon group-->
 
                 <include segmentGroup="Sec_Comp_11"/>
                 <include segmentGroup="Sec_Comp_12"/>
@@ -3624,9 +3624,9 @@ inode R X Y Z D/2 idpar</notes>
             <intracellularProperties>
                 <species segmentGroup="dendrite_group" id="ca" ion="ca" concentrationModel="ca_conc" initialConcentration="3.7152 mM" initialExtConcentration="3.0mM"/>
 
-                <resistivity value=".1 ohm_cm" segmentGroup="soma_group"/>
-                <resistivity value=".1 ohm_cm" segmentGroup="dendrite_group"/>
-                <resistivity value=".1 ohm_cm" segmentGroup="axon_group"/>
+                <resistivity value="100 ohm_cm" segmentGroup="soma_group"/>
+                <resistivity value="100 ohm_cm" segmentGroup="dendrite_group"/>
+                <resistivity value="100 ohm_cm" segmentGroup="axon_group"/>
             </intracellularProperties>
 
         </biophysicalProperties>

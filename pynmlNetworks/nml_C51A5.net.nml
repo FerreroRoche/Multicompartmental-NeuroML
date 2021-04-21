@@ -1,0 +1,16 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.1.xsd" id="net_C51A5">
+    <include href="../Cells/C51A5_scaled_exp_resample_5.cell.nml"/>
+    <pulseGenerator id="iclamp0" delay="50ms" duration="250ms" amplitude="-1.0nA"/>
+    <pulseGenerator id="iclamp1" delay="50ms" duration="250ms" amplitude="-1.0nA"/>
+    <network id="network_of_C51A" type="networkWithTemperature" temperature="37degC">
+        <population id="population_of_C51A" component="C51A" size="1" type="populationList">
+            <instance id="0">
+                <location x="0." y="0." z="0."/>
+            </instance>
+        </population>
+        <inputList id="Iclamp1" population="population_of_C51A" component="iclamp1">
+            <input id="0" target="../population_of_C51A/0/C51A" destination="synapses"/>
+            <input id="1" target="../population_of_C51A/0/C51A" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

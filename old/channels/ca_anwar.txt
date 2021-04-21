@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Ca_conc">
+
+
+
+
+
+<decayingPoolConcentrationModel_Anwar id="ca_conc" restingConc="0.0mM" decayConstant="33.333333333333ms" ion="ca" shellDepth="0.001um"/>
+
+
+
+
+
+<ComponentType name="decayingPoolConcentrationModel_Anwar"
+        extends="concentrationModel"
+        description="Model of an intracellular buffering mechanism for _ion (currently hard Coded to be calcium, due to requirement for _iCa) which has a baseline level _restingConc and tends to this value with time course _decayConstant. The ion is assumed to occupy a shell inside the membrane of thickness _shellThickness.">
+
+        <Parameter name="restingConc" dimension="concentration"/>
+        <Parameter name="decayConstant" dimension="time"/>
+        <Parameter name="shellDepth" dimension="length"/>
+        <!--<Parameter name="radius" dimension="length"/>   needed to calc volume of pools, etc. -->
+        <!--<Exposure name="debugVal" dimension="none"/>-->
+
+        <Constant name="Faraday" dimension="charge_per_mole" value="96485.3C_per_mol"/>
+        <Constant name="AREA_SCALE" dimension="area" value="1m2"/>
+        <Constant name="LENGTH_SCALE" dimension="length" value="1m"/>
+
+        <Requirement name="iCa" dimension="current"/>
+
+        <Text name="ion"/> <!-- TODO: check why this isn't inherited from concentrationModel -->
+
+        <Dynamics>
+
+            <StateVariable name="concentration" exposure="concentration" dimension="concentration"/>
+            <StateVariable name="extConcentration" exposure="extConcentration" dimension="concentration"/>
+            <!--<StateVariable name="debugVal" exposure="debugVal" dimension="none"/>-->
+            <!--<DerivedVariable name="debug" dimension="none" value="shell_volume"/>-->
+
+	
+	     		
+            <DerivedVariable name="effectiveRadius" dimension="length" value="LENGTH_SCALE * sqrt(surfaceArea/(AREA_SCALE * (4 * 3.14159)))"/>  <!-- needed to calc volume of pools, etc. -->
+	    <DerivedVariable name="eqshellDepth" dimension="length" value="shellDepth - ((shellDepth * shellDepth) / effectiveRadius)/>
+            <DerivedVariable name="innerRadius" dimension="length" value="effectiveRadius - eqshellDepth"/>
+
+            <DerivedVariable name="shellVolume" dimension="volume" value="(4 * (effectiveRadius * effectiveRadius * effectiveRadius) * 3.14159 / 3) - (4 * (innerRadius * innerRadius * innerRadius) * 3.14159 / 3)"/>
+
+            <TimeDerivative variable="concentration" value="iCa / (2 * Faraday * shellVolume) - ((concentration - restingConc) / decayConstant)"/>
+
+            <OnStart>
+                <StateAssignment variable="concentration" value="initialConcentration"/>
+                <StateAssignment variable="extConcentration" value="initialExtConcentration"/>
+            </OnStart>
+            
+            <OnCondition test="concentration .lt. 0">
+                <StateAssignment variable="concentration" value="0"/>
+            </OnCondition>
+
+        </Dynamics>
+
+    </ComponentType>
+
+
+</neuroml>

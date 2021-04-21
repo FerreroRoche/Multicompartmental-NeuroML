@@ -2,7 +2,7 @@
     
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.5.5 (libNeuroML v0.2.52)
+        This LEMS file has been automatically generated using PyNeuroML v0.5.3 (libNeuroML v0.2.51)
 
      -->
     
@@ -14,13 +14,14 @@
     <Include file="Networks.xml"/>
     <Include file="Simulation.xml"/>
     
-    <Include file="./pynmlNetworks/nml_C51A.net.nml"/>
+    <Include file="../pynmlNetworks/nml_C51A.net.nml"/>
     <Include file="../Cells/C51A_scaled_exp_resample_5.cell.nml"/>
     <Include file="../channels/na_s.channel.nml"/>
     <Include file="../channels/ExpTime.nml"/>
     <Include file="../channels/kdr.channel.nml"/>
     <Include file="../channels/k.channel.nml"/>
     <Include file="../channels/cal.channel.nml"/>
+    <Include file="../channels/BK.channel.nml"/>
     <Include file="../channels/cah.channel.nml"/>
     <Include file="../channels/kca.channel.nml"/>
     <Include file="../channels/h.channel.nml"/>
@@ -29,14 +30,72 @@
     <Include file="../channels/na_a.channel.nml"/>
     <Include file="../channels/leak.channel.nml"/>
    
-    <Simulation id="Test" length="300ms" step="2.5e-05ms" target="network_of_C51A" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+    <Simulation id="Test" length="10000ms" step="0.025ms" target="network_of_C51A" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
         
-        <Display id="display_0" title="IDK FIRST DISPLAY TEST" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-100" ymax="70">
-            <Line id="0" quantity="population_of_C51A/0/C51A/0/v" scale="1" color="#d54f33" timeScale="1ms"/>
+        <Display id="Gates Soma" title="Soma gate variables" timeScale="1ms" xmin="-1000.0" xmax="11000.0" ymin="0" ymax="1">
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/na_s_soma/na_s/m/q" scale="1" color="#52c8bf" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/na_s_soma/na_s/h/q" scale="1" color="#bf0239" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/kdr_soma/kdr/n/q" scale="1" color="#3f9fe8" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/k_soma/k/n/q" scale="1" color="#dda9d2" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/cal_soma/cal/k/q" scale="1" color="#85ad96" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/cal_soma/cal/l/q" scale="1" color="#59438f" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/BK_soma/BK/c/q" scale="1" color="#5fa56f" timeScale="1ms"/>
         </Display>
         
-        <OutputFile id="voltage traces" fileName="Test.v.dat">
+        <Display id="Gates Dendrite" title="Dendrite gate variables" timeScale="1ms" xmin="-1000.0" xmax="11000.0" ymin="0" ymax="1">
+            <Line id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/cah_dend/cah/r/q" scale="1" color="#d54f33" timeScale="1ms"/>
+            <Line id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/kca_dend/kca/z/q" scale="1" color="#0534e4" timeScale="1ms"/>
+            <Line id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/h_dend/h/n/q" scale="1" color="#98e752" timeScale="1ms"/>
+            <Line id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/cacc_dend/cacc/m/q" scale="1" color="#bca074" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="Gates Axon" title="Axon gate variables" timeScale="1ms" xmin="-1000.0" xmax="11000.0" ymin="0" ymax="1">
+            <Line id="8" quantity="population_of_C51A/0/C51A/8/biophys/membraneProperties/na_axon/na_a/m/q" scale="1" color="#632794" timeScale="1ms"/>
+            <Line id="8" quantity="population_of_C51A/0/C51A/8/biophys/membraneProperties/na_axon/na_a/h/q" scale="1" color="#8a5d88" timeScale="1ms"/>
+            <Line id="8" quantity="population_of_C51A/0/C51A/8/biophys/membraneProperties/k_axon/k/n/q" scale="1" color="#df5954" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="Voltage" title="Dendrite trace" timeScale="1ms" xmin="-1000.0" xmax="11000.0" ymin="-100" ymax="70">
+            <Line id="69" quantity="population_of_C51A/0/C51A/69/v" scale="1" color="#b5b5a2" timeScale="1ms"/>
+            <Line id="8" quantity="population_of_C51A/0/C51A/8/v" scale="1" color="#2ebe19" timeScale="1ms"/>
+            <Line id="0" quantity="population_of_C51A/0/C51A/0/v" scale="1" color="#d30150" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="Caconc" title="Caconc trace" timeScale="1ms" xmin="-1000.0" xmax="11000.0" ymin="-100" ymax="70">
+            <Line id="69" quantity="population_of_C51A/0/C51A/69/caConc" scale="1" color="#55490a" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Gate_file_soma" fileName="Test.Soma_gates.dat">
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/na_s_soma/na_s/m/q"/> 
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/na_s_soma/na_s/h/q"/> 
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/kdr_soma/kdr/n/q"/> 
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/k_soma/k/n/q"/> 
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/cal_soma/cal/k/q"/> 
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/cal_soma/cal/l/q"/> 
+            <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/biophys/membraneProperties/BK_soma/BK/c/q"/> 
+        </OutputFile>
+        
+        <OutputFile id="Gate_file_dendrite" fileName="Test.Dendrite_gates.dat">
+            <OutputColumn id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/cah_dend/cah/r/q"/> 
+            <OutputColumn id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/kca_dend/kca/z/q"/> 
+            <OutputColumn id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/h_dend/h/n/q"/> 
+            <OutputColumn id="69" quantity="population_of_C51A/0/C51A/69/biophys/membraneProperties/cacc_dend/cacc/m/q"/> 
+        </OutputFile>
+        
+        <OutputFile id="Gate_file_axon" fileName="Test.Axon_gates.dat">
+            <OutputColumn id="8" quantity="population_of_C51A/0/C51A/8/biophys/membraneProperties/na_axon/na_a/m/q"/> 
+            <OutputColumn id="8" quantity="population_of_C51A/0/C51A/8/biophys/membraneProperties/na_axon/na_a/h/q"/> 
+            <OutputColumn id="8" quantity="population_of_C51A/0/C51A/8/biophys/membraneProperties/k_axon/k/n/q"/> 
+        </OutputFile>
+        
+        <OutputFile id="file" fileName="Test.vd.dat">
+            <OutputColumn id="69" quantity="population_of_C51A/0/C51A/69/v"/> 
+            <OutputColumn id="8" quantity="population_of_C51A/0/C51A/8/v"/> 
             <OutputColumn id="0" quantity="population_of_C51A/0/C51A/0/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Caconc file" fileName="Test.caconc.dat">
+            <OutputColumn id="69" quantity="population_of_C51A/0/C51A/69/caConc"/> 
         </OutputFile>
         
     </Simulation>
